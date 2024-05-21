@@ -25,40 +25,36 @@ const projects = [
     num: "01",
     category: "frontend",
     title: "project 1",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description: "'THE COFFEE SHOP' Responsive Coffee Shop Website Design (Frontend only).",
     stack: [
-      { name: "html5" },
-      { name: "css3" },
-      { name: "javascript" },
+      { name: "ReactJS" },
+      { name: "TailwindCSS" },
     ],
     image: "/assets/work/thecoffeshop.png",
-    live: "",
-    github: "",
+    live: "https://thecoffeeshop-arw.netlify.app/",
+    github: "https://github.com/arwijesuriya/the-coffee-shop.git",
   },
   {
     num: "02",
     category: "webapp",
     title: "project 2",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description: "'THE ATLAS' is the web app where we can get details of any country using Rest API.",
     stack: [
       { name: "html5" },
       { name: "css3" },
       { name: "javascript" },
     ],
     image: "/assets/work/theatlas.png",
-    live: "",
-    github: "",
+    live: "https://66475ed556a651cdbc08f8cb--theatlas.netlify.app/",
+    github: "https://github.com/arwijesuriya/the-atlas.git",
   },
   {
     num: "03",
     category: "fullstack",
     title: "project 3",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    description: "'THE BOOKSTORE' is a Responsive E-commerce Platform for Bookstores with Builtin Inventory Control. (In Progress)",
     stack: [
-      { name: "MongoDB" },
-      { name: "ExpressJS" },
-      { name: "ReactJS" },
-      { name: "NodeJS" },
+      { name: "MERN stack" },
       { name: "TailwindCSS" },
     ],
     image: "/assets/work/thebookstore.png",
@@ -85,15 +81,15 @@ const Work = () => {
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           
           {/* TEXT SECTION */}
-          <div className="w-full xl:w-[50%] xl:h-[300px] flex flex-col xl:justify-between order-2 xl:order-none">
+          <div className="w-full xl:w-[60%] xl:h-[250px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
               {/* NUMBER */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+              <div className="text-6xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
 
               {/* CATEGORY */}
-              <div className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+              <div className="text-[35px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
                 {project.category}
               </div>
 
@@ -103,10 +99,10 @@ const Work = () => {
               </p>
 
               {/* STACK */}
-              <ul className="flex gap-4">
+              <ul className="flex gap-2">
                 {project.stack.map((item, index) => {
                   return (
-                    <li key={index} className="text-xl text-accent">
+                    <li key={index} className="text-lg text-accent">
                       {item.name}
 
                       {/* REMOVE LAST COMMA */}
@@ -127,7 +123,7 @@ const Work = () => {
                 <Link href={project.live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="w-[60px] h-[60px] rounded-full bg-white/5 flex justify-center items-center group">
+                      <TooltipTrigger className="w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group">
                         <BsGlobe2 className="text-white text-3xl group-hover:text-accent" />
                       </TooltipTrigger>
 
@@ -142,7 +138,7 @@ const Work = () => {
                 <Link href={project.github}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="w-[60px] h-[60px] rounded-full bg-white/5 flex justify-center items-center group">
+                      <TooltipTrigger className="w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group">
                         <BsGithub className="text-white text-3xl group-hover:text-accent" />
                       </TooltipTrigger>
 
@@ -157,12 +153,12 @@ const Work = () => {
           </div>
 
           {/* SLIDER SECTION */}
-          <div className="w-full xl:w-[50%]">
-            <Swiper spaceBetween={30} slidesPerView={1} onSlideChange={handleSlideChange} className="xl:h-[300px] mb-5">
+          <div className="w-full xl:w-[40%]">
+            <Swiper spaceBetween={30} slidesPerView={1} onSlideChange={handleSlideChange} className="xl:h-[350px] xl:w-[350px] mb-2">
               {projects.map((project, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                    <div className="h-[315px] relative group flex justify-center items-center bg-pink-50/20">
                       
                       {/* OVERLAY */}
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10">
@@ -180,7 +176,7 @@ const Work = () => {
               })}
 
               {/* SLIDER BUTTON */}
-              <WorkSliderBtns containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none" btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all" />
+              <WorkSliderBtns containerStyles="flex gap-1 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none" btnStyles="bg-accent hover:bg-accent-hover text-primary text-[20px] w-[30px] h-[30px] flex justify-center items-center transition-all" />
             </Swiper>
           </div>
 
