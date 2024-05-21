@@ -31,7 +31,7 @@ const Home = () => {
             {/* BUTTON AND SOCIAL ICONS */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
-                <span>Resume</span>
+                <span><a href="https://drive.google.com/file/d/1e__lM056P4VuAv2L-qnmb-QXXNHgx-C6/view?usp=sharing" target="_blank">Resume</a></span>
                 <FiDownload className="text-xl"/>
               </Button>
 
