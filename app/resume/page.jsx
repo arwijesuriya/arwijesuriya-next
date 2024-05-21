@@ -71,11 +71,22 @@ const education = {
   items: [
     {
       institution: "Dharmapala Vidyalaya, Pannipitiya",
-      degree: "School",
+      degree: "First education",
       duration: "2006 - 2019",
-    },{
+    },
+    {
+      institution: "University of Colombo School of Computing",
+      degree: "Diploma in Information Technology",
+      duration: "2021 - 2022",
+    },
+    {
+      institution: "Esoft Metro Campus, Nugegoda",
+      degree: "Diploma in English",
+      duration: "2022 - 2023",
+    },
+    {
       institution: "Vavuniya Campus of the University of Jaffna",
-      degree: "BSc. IT",
+      degree: "BSc. Information Technology",
       duration: "2022 - Present",
     },
   ],
@@ -174,20 +185,20 @@ const Resume = () => {
                 <h3 className="text-4xl font-bold">
                   {experience.title}
                 </h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[800px] text-white/60 mx-auto xl:mx-0">
                   {experience.descriptioon}
                 </p>
-                <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                <ScrollArea className="h-[200px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
                     {experience.items.map((item, index) => {
                       return (
-                        <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                        <li key={index} className="bg-[#232329] h-[180px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
                           <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.position}</h3>
-                          <div className="flex items-center gap-3">
+                          <h3 className="text-xl max-w-[400px] min-h-[60px] text-center lg:text-left">{item.position}</h3>
+                          <div className="flex items-center gap-2">
                             {/* GREEN DOT */}
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.company}</p>
+                            <span className="w-[7px] h-[7px] rounded-full bg-accent"></span>
+                            <p className="text-white/40">{item.company}</p>
                           </div>
                         </li>
                       );
@@ -203,20 +214,20 @@ const Resume = () => {
                 <h3 className="text-4xl font-bold">
                   {education.title}
                 </h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[800px] text-white/60 mx-auto xl:mx-0">
                   {education.descriptioon}
                 </p>
-                <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                <ScrollArea className="h-[200px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
                     {education.items.map((item, index) => {
                       return (
-                        <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                        <li key={index} className="bg-[#232329] h-[180px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
                           <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.degree}</h3>
-                          <div className="flex items-center gap-3">
+                          <h3 className="text-xl max-w-[400px] min-h-[60px] text-center lg:text-left">{item.degree}</h3>
+                          <div className="flex items-center gap-2">
                             {/* GREEN DOT */}
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.institution}</p>
+                            <span className="w-[7px] h-[7px] rounded-full bg-accent"></span>
+                            <p className="text-white/40">{item.institution}</p>
                           </div>
                         </li>
                       );
@@ -233,12 +244,12 @@ const Resume = () => {
                   <h3 className="text-4xl font-bold">
                     {skills.title}
                   </h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  <p className="max-w-[800px] text-white/60 mx-auto xl:mx-0">
                     {skills.descriptioon}
                   </p>
                 </div>
 
-                <ScrollArea className="h-[400px]">
+                <ScrollArea className="h-[200px]">
                   <ul className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 xl:gap-[10px] gap-4">
                     {skills.skillList.map((skill, index) => {
                       return (
@@ -269,11 +280,11 @@ const Resume = () => {
             <TabsContent value="about" className="w-full text-center xl:text-left" >
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[800px] text-white/60 mx-auto xl:mx-0">
                   {about.descriptioon}
                 </p>
 
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[650px] mx-auto xl:mx-0">
                   {about.info.map((item, index) => {
                     return (
                       <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
