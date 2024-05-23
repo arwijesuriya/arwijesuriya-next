@@ -1,5 +1,5 @@
-import { Icon } from "lucide-react";
-import Link from "next/link"
+//import { Icon } from "lucide-react";
+import Link from "next/link";
 
 import { FaGithub, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa'
 

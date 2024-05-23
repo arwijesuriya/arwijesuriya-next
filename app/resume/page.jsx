@@ -1,16 +1,19 @@
 "use client";
 
 // REACT ICONS
-import { FaHtml5, FaCss3, FaJs, FaFigma, FaReact, FaNodeJs, FaJava } from 'react-icons/fa';
+import { FaHtml5, FaCss3, FaJs,  FaReact, FaNodeJs, FaJava, FaGithub, FaChrome } from 'react-icons/fa';
 import { FiFigma } from 'react-icons/fi';
-import { SiMongodb, SiExpress, SiTailwindcss, SiGooglecloud, SiMysql, SiPhp, SiPostman, SiGit } from 'react-icons/si';
-import { VscVscode } from 'react-icons/vsc'
+import { SiMongodb, SiCanva, SiVercel, SiCplusplus, SiVite, SiExpress, SiTailwindcss, SiGooglecloud, SiMysql, SiPhp, SiPostman, SiGit } from 'react-icons/si';
+import { VscVscode } from 'react-icons/vsc';
+import { RiNextjsLine } from 'react-icons/ri';
+import { BiLogoNetlify } from 'react-icons/bi';
 
 // IMPORT COMPONENTS
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {  motion } from 'framer-motion';
+import AboutSocial from '@/components/AboutSocial';
 
 // ABOUT DATA
 const about = {
@@ -44,6 +47,35 @@ const about = {
   ],
 };
 
+// EDUCATION DATA
+const education = {
+  icon: '/assets/resume/cap.svg',
+  title: "My education",
+  descriptioon: "Education's purpose is to replace an empty mind with an open one.",
+  items: [
+    {
+      institution: "Dharmapala Vidyalaya, Pannipitiya",
+      degree: "School",
+      duration: "2006 - 2019",
+    },
+    {
+      institution: "University of Colombo",
+      degree: "Diploma in Information Technology",
+      duration: "2021 - 2022",
+    },
+    {
+      institution: "Esoft Metro Campus, Nugegoda",
+      degree: "Diploma in English",
+      duration: "2022 - 2023",
+    },
+    {
+      institution: "University of Vavuniya",
+      degree: "BSc. Information Technology",
+      duration: "2022 - Present",
+    },
+  ],
+};
+
 // EXPERIENCE DATA
 const experience = {
   icon: '/assets/resume/badge.svg',
@@ -59,35 +91,6 @@ const experience = {
       company: "Codsoft",
       position: "Front-End Developer Intern",
       duration: "2023 March - April",
-    },
-  ],
-};
-
-// EDUCATION DATA
-const education = {
-  icon: '/assets/resume/cap.svg',
-  title: "My education",
-  descriptioon: "Education's purpose is to replace an empty mind with an open one.",
-  items: [
-    {
-      institution: "Dharmapala Vidyalaya, Pannipitiya",
-      degree: "First education",
-      duration: "2006 - 2019",
-    },
-    {
-      institution: "University of Colombo School of Computing",
-      degree: "Diploma in Information Technology",
-      duration: "2021 - 2022",
-    },
-    {
-      institution: "Esoft Metro Campus, Nugegoda",
-      degree: "Diploma in English",
-      duration: "2022 - 2023",
-    },
-    {
-      institution: "Vavuniya Campus of the University of Jaffna",
-      degree: "BSc. Information Technology",
-      duration: "2022 - Present",
     },
   ],
 };
@@ -110,8 +113,8 @@ const skills = {
       name: "JavaScript",
     },
     {
-      icon: <SiMysql/>,
-      name: "MySQL",
+      icon: <SiTailwindcss/>,
+      name: "TailwindCSS",
     },
     {
       icon: <SiMongodb/>,
@@ -130,20 +133,36 @@ const skills = {
       name: "NodeJS",
     },
     {
-      icon: <FaJava/>,
-      name: "Java",
+      icon: <SiVite/>,
+      name: "ViteJS",
     },
     {
-      icon: <SiTailwindcss/>,
-      name: "TailwindCSS",
+      icon: <RiNextjsLine/>,
+      name: "NextJS",
+    },
+    {
+      icon: <SiMysql/>,
+      name: "MySQL",
     },
     {
       icon: <SiPhp/>,
       name: "PHP",
     },
     {
+      icon: <SiCplusplus/>,
+      name: "C++",
+    },
+    {
+      icon: <FaJava/>,
+      name: "Java",
+    },
+    {
       icon: <SiGit/>,
       name: "git",
+    },
+    {
+      icon: <FaGithub/>,
+      name: "GitHub",
     },
     {
       icon: <SiPostman/>,
@@ -158,8 +177,43 @@ const skills = {
       name: "Figma",
     },
     {
+      icon: <SiCanva/>,
+      name: "Canva",
+    },
+    {
       icon: <SiGooglecloud/>,
       name: "GoogleCloud",
+    },
+    {
+      icon: <FaChrome/>,
+      name: "Chrome",
+    },
+    {
+      icon: <BiLogoNetlify/>,
+      name: "Netlify",
+    },
+    {
+      icon: <SiVercel/>,
+      name: "Vercel",
+    },
+  ],
+};
+
+// PROJECTS DATA
+const projects = {
+  icon: '/assets/resume/badge.svg',
+  title: "My experience",
+  descriptioon: "My experiences have taught me a lot and I'm happy with my learnings, if not with what I went through to learn.",
+  items: [
+    {
+      company: "Bank of Ceylon",
+      position: "School Leaver Intern",
+      duration: "2021 - 2022",
+    },
+    {
+      company: "Codsoft",
+      position: "Front-End Developer Intern",
+      duration: "2023 March - April",
     },
   ],
 };
@@ -168,43 +222,42 @@ const Resume = () => {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" }, }} className="min-h-[60vh] flex items-center justify-center py-10 xl:py-0" >
       <div className="container mx-auto">
-        <Tabs defaultValue="experience" className="flex flex-col xl:flex-row gap-[50px]" >
-          <TabsList className="flex flex-col w-full max-w-[300px] mx-auto xl:mx-0 gap-6" >
-            <TabsTrigger value="experience">Experience</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
+        <Tabs defaultValue="about" className="flex flex-col xl:flex-row gap-[50px]" >
+          
+          {/* TAB LIST */}
+          <TabsList className="flex flex-col w-full max-w-[250px] mx-auto xl:mx-0 gap-6" >
             <TabsTrigger value="about">About me</TabsTrigger>
+            <TabsTrigger value="education">Education</TabsTrigger>
+            <TabsTrigger value="experience">Experience</TabsTrigger>
+            <TabsTrigger value="skills">Skills</TabsTrigger>
+            <TabsTrigger value="projects">Projects</TabsTrigger>
           </TabsList>
 
           {/* CONTENT */}
           <div className="min-h-[70vh] w-full" >
             
-            {/* EXPERIENCE */}
-            <TabsContent value="experience" className="w-full" >
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">
-                  {experience.title}
-                </h3>
+            {/* ABOUT ME */}
+            <TabsContent value="about" className="w-full text-center xl:text-left" >
+              <div className="flex flex-col gap-[20px]">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
                 <p className="max-w-[800px] text-white/60 mx-auto xl:mx-0">
-                  {experience.descriptioon}
+                  {about.descriptioon}
                 </p>
-                <ScrollArea className="h-[200px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
-                    {experience.items.map((item, index) => {
-                      return (
-                        <li key={index} className="bg-[#232329] h-[180px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
-                          <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[400px] min-h-[60px] text-center lg:text-left">{item.position}</h3>
-                          <div className="flex items-center gap-2">
-                            {/* GREEN DOT */}
-                            <span className="w-[7px] h-[7px] rounded-full bg-accent"></span>
-                            <p className="text-white/40">{item.company}</p>
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </ScrollArea>
+
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-4 max-w-[650px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => {
+                    return (
+                      <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
+                        <span className="text-white/60">{item.fieldName}</span>
+                        <span className="text-xl">{item.fieldValue}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+
+                <div className="mb-6 xl:mb-0">
+                  <AboutSocial mySocialsStyles="flex gap-4" myIconStyles="bg-[#232329] w-8 h-8 rounded-xl flex justify-center items-center text-base hover:text-accent hover:transition-all duration-300" />
+                </div>
               </div>
             </TabsContent>
 
@@ -218,7 +271,7 @@ const Resume = () => {
                   {education.descriptioon}
                 </p>
                 <ScrollArea className="h-[200px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-1 gap-[30px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
                     {education.items.map((item, index) => {
                       return (
                         <li key={index} className="bg-[#232329] h-[180px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
@@ -228,6 +281,35 @@ const Resume = () => {
                             {/* GREEN DOT */}
                             <span className="w-[7px] h-[7px] rounded-full bg-accent"></span>
                             <p className="text-white/40">{item.institution}</p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
+              </div>
+            </TabsContent>
+
+            {/* EXPERIENCE */}
+            <TabsContent value="experience" className="w-full" >
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">
+                  {experience.title}
+                </h3>
+                <p className="max-w-[800px] text-white/60 mx-auto xl:mx-0">
+                  {experience.descriptioon}
+                </p>
+                <ScrollArea className="h-[200px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
+                    {experience.items.map((item, index) => {
+                      return (
+                        <li key={index} className="bg-[#232329] h-[180px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                          <span className="text-accent">{item.duration}</span>
+                          <h3 className="text-xl max-w-[400px] min-h-[60px] text-center lg:text-left">{item.position}</h3>
+                          <div className="flex items-center gap-2">
+                            {/* GREEN DOT */}
+                            <span className="w-[7px] h-[7px] rounded-full bg-accent"></span>
+                            <p className="text-white/40">{item.company}</p>
                           </div>
                         </li>
                       );
@@ -276,26 +358,35 @@ const Resume = () => {
               </div>
             </TabsContent>
 
-            {/* ABOUT ME */}
-            <TabsContent value="about" className="w-full text-center xl:text-left" >
-              <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold">{about.title}</h3>
+            {/* PROJECTS */}
+            <TabsContent value="projects" className="w-full" >
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">
+                  {projects.title}
+                </h3>
                 <p className="max-w-[800px] text-white/60 mx-auto xl:mx-0">
-                  {about.descriptioon}
+                  {projects.descriptioon}
                 </p>
-
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[650px] mx-auto xl:mx-0">
-                  {about.info.map((item, index) => {
-                    return (
-                      <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
-                        <span className="text-white/60">{item.fieldName}</span>
-                        <span className="text-xl">{item.fieldValue}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
+                <ScrollArea className="h-[200px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
+                    {experience.items.map((item, index) => {
+                      return (
+                        <li key={index} className="bg-[#232329] h-[180px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                          <span className="text-accent">{item.duration}</span>
+                          <h3 className="text-xl max-w-[400px] min-h-[60px] text-center lg:text-left">{item.position}</h3>
+                          <div className="flex items-center gap-2">
+                            {/* GREEN DOT */}
+                            <span className="w-[7px] h-[7px] rounded-full bg-accent"></span>
+                            <p className="text-white/40">{item.company}</p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
               </div>
             </TabsContent>
+
           </div>
         </Tabs>
       </div>
