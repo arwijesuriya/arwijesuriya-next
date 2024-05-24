@@ -67,7 +67,7 @@ const logo = {
 // ARTICLE DATA
 const article = {
   title: "Logo designs",
-  description: "For the past years, I've been working on various logo design projects. Before starting each project, I conduct thorough research and gather inspiration to ensure unique and impactful designs. Check out my portfolio to see what I've been up to!",
+  description: "For the past years, I've been working on various article writing projects in my leisure time. Only some articles are written. Check out my portfolio to see what I've been up to!",
   articleItems: [
     {
       articleName: "How to Save Money on Your Energy Bill",
