@@ -8,25 +8,25 @@ const services = [
     num: '01',
     title: 'Web Development',
     description: 'Develop and maintain web services. Contribute to frontend and backend development processes.',
-    href: ""
+    href: "https://www.w3schools.com/java/"
   },
   {
     num: '02',
     title: 'UI/UX Development',
     description: 'create a positive user experience that encourages customers to stick with a brand or product.',
-    href: ""
+    href: "https://www.w3schools.com/python/"
   },
   {
     num: '03',
     title: 'Logo Design',
     description: 'focuses on creating unique and visually compelling symbols or designs that represent a product.',
-    href: ""
+    href: "https://www.w3schools.com/cpp/"
   },
   {
     num: '04',
     title: 'Articles Writing',
     description: 'content with the purpose of informing, educating, or persuading readers on a particular topic.',
-    href: ""
+    href: "https://www.w3schools.com/php/"
   }
 ];
 
