@@ -14,14 +14,14 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {  motion } from 'framer-motion';
 import AboutSocial from '@/components/AboutSocial';
-import ProjectSocial from '@/components/ProjectSocial';
+//import ProjectSocial from '@/components/ProjectSocial';
 import Link from 'next/link';
-import { useState } from 'react';
+//import { useState } from 'react';
 
 // ABOUT DATA
 const about = {
   title: "About me",
-  descriptioon: "I'm a confident and ambitious individual passionate about Information Technology. I aim to become a skilled IT professional, contributing significantly to the industry. I'm eager to tackle new challenges and make a meaningful impact in the evolving world of technology.",
+  description: "I'm a confident and ambitious individual passionate about Information Technology. I aim to become a skilled IT professional, contributing significantly to the industry. I'm eager to tackle new challenges and make a meaningful impact in the evolving world of technology.",
   info: [
     {
       fieldName: "Name",
@@ -54,12 +54,17 @@ const about = {
 const education = {
   icon: '/assets/resume/cap.svg',
   title: "My education",
-  descriptioon: "Currently, I'm pursuing a BSc in Information Technology, driven by a strong interest in IT and analytical skills. I'm seeking challenging IT internships to enhance my skills and foster personal and professional growth.",
+  description: "Currently, I'm pursuing a BSc in Information Technology, driven by a strong interest in IT and analytical skills. I'm seeking challenging IT internships to enhance my skills and foster personal and professional growth.",
   items: [
     {
       institution: "Dharmapala Vidyalaya, Pannipitiya",
       degree: "School",
       duration: "2006 - 2019",
+    },
+    {
+      institution: "Sri Vajiragnana Dharmayathanaya, Maharagama",
+      degree: "Dhamma school",
+      duration: "2006 - 2016",
     },
     {
       institution: "University of Colombo",
@@ -83,7 +88,7 @@ const education = {
 const experience = {
   icon: '/assets/resume/badge.svg',
   title: "My experience",
-  descriptioon: "After pursuing Advanced level studies in Physical Science, I interned in two times. And my experiences have taught me a lot and I'm happy with my learnings, if not with what I went through to learn.",
+  description: "After pursuing Advanced level studies in Physical Science, I interned in two times. And my experiences have taught me a lot and I'm happy with my learnings, if not with what I went through to learn.",
   items: [
     {
       company: "Bank of Ceylon",
@@ -101,15 +106,15 @@ const experience = {
 // TECHSTACK DATA
 const techStack = {
   title: "My technologies",
-  descriptioon: "The future belongs to those who learn more skills and combine them in creative ways. For the past years, I've been working with latest technologies, including programming languages, frameworks, databases, front-end and back-end tools, and APIs.",
+  description: "The future belongs to those who learn more skills and combine them in creative ways. For the past years, I've been working with latest technologies, including programming languages, frameworks, databases, front-end and back-end tools, and APIs.",
   techList: [
     {
       icon: <FaHtml5/>,
-      name: "html5",
+      name: "HTML5",
     },
     {
       icon: <FaCss3/>,
-      name: "css3",
+      name: "CSS3",
     },
     {
       icon: <FaJs/>,
@@ -205,7 +210,7 @@ const techStack = {
 // ABILITIES DATA
 const abilities = {
   title: "My abilities",
-  descriptioon: "",
+  description: "I specialize in web development, UI/UX design, logo design, and article writing. I create visually appealing and functional websites, intuitive user interfaces, and compelling brand identities. My writing skills ensure clear and engaging content for diverse audiences.",
   items: [
     {
       abName: "Web Development",
@@ -230,7 +235,7 @@ const abilities = {
 const projects = {
   icon: '/assets/resume/badge.svg',
   title: "My Projects",
-  descriptioon: "For the past years, I've been working with various projects and getting the chance to get my hands on the latest technologies and approaches. Check out my projects to see what I've been up to!",
+  description: "For the past years, I've been working with various projects and getting the chance to get my hands on the latest technologies and approaches. Check out my projects to see what I've been up to!",
   myProjects: [
     {
       projectName: "THE COFFEE SHOP",
@@ -284,7 +289,7 @@ const Resume = () => {
               <div className="flex flex-col gap-[20px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
                 <p className="max-w-full text-white/60 mx-auto xl:mx-0">
-                  {about.descriptioon}
+                  {about.description}
                 </p>
 
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-2 max-w-full mx-auto xl:mx-0">
@@ -311,7 +316,7 @@ const Resume = () => {
                   {education.title}
                 </h3>
                 <p className="max-w-full text-white/60 mx-auto xl:mx-0">
-                  {education.descriptioon}
+                  {education.description}
                 </p>
                 <ScrollArea className="h-[200px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
@@ -340,7 +345,7 @@ const Resume = () => {
                   {experience.title}
                 </h3>
                 <p className="max-w-full text-white/60 mx-auto xl:mx-0">
-                  {experience.descriptioon}
+                  {experience.description}
                 </p>
                 <ScrollArea className="h-[200px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
@@ -370,7 +375,7 @@ const Resume = () => {
                     {techStack.title}
                   </h3>
                   <p className="max-w-full text-white/60 mx-auto xl:mx-0">
-                    {techStack.descriptioon}
+                    {techStack.description}
                   </p>
                 </div>
 
@@ -408,7 +413,7 @@ const Resume = () => {
                   {abilities.title}
                 </h3>
                 <p className="max-w-full text-white/60 mx-auto xl:mx-0">
-                  {abilities.descriptioon}
+                  {abilities.description}
                 </p>
                 <ScrollArea className="h-[200px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
@@ -432,7 +437,7 @@ const Resume = () => {
                   {projects.title}
                 </h3>
                 <p className="max-w-full text-white/60 mx-auto xl:mx-0">
-                  {projects.descriptioon}
+                  {projects.description}
                 </p>
                 <ScrollArea className="h-[200px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
@@ -451,10 +456,12 @@ const Resume = () => {
                             {projects.myProjects.map((proj, index) => {
                               return (
                                 <li key={index}>
+                                  
+                                  {/* LIVE */}
                                   <Link href={proj.live}>
                                     <TooltipProvider delayDuration={100}>
                                       <Tooltip>
-                                        <TooltipTrigger className="w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group">
+                                        <TooltipTrigger className="w-[10px] h-[10px] rounded-full bg-white/5 flex justify-center items-center group">
                                           <FaGlobe className="text-white text-3xl group-hover:text-accent" />
                                         </TooltipTrigger>
 
@@ -465,10 +472,11 @@ const Resume = () => {
                                     </TooltipProvider>
                                   </Link>
 
+                                  {/* GITHUB */}
                                   <Link href={proj.github}>
                                     <TooltipProvider delayDuration={100}>
                                       <Tooltip>
-                                        <TooltipTrigger className="w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group">
+                                        <TooltipTrigger className="w-[10px] h-[10px] rounded-full bg-white/5 flex justify-center items-center group">
                                           <FaGithub className="text-white text-3xl group-hover:text-accent" />
                                         </TooltipTrigger>
 
