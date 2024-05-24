@@ -231,39 +231,6 @@ const abilities = {
   ],
 };
 
-// PROJECTS DATA
-const projects = {
-  icon: '/assets/resume/badge.svg',
-  title: "My Projects",
-  description: "For the past years, I've been working with various projects and getting the chance to get my hands on the latest technologies and approaches. Check out my projects to see what I've been up to!",
-  myProjects: [
-    {
-      projectName: "THE COFFEE SHOP",
-      projectDescription: "This is a beginner friendly eCommerce responsive Coffee Shop Website frontend Using ReactJS and Tailwind CSS.",
-      live: "https://thecoffeeshop-arw.netlify.app/",
-      github: "https://github.com/arwijesuriya/the-coffee-shop.git",
-    },
-    {
-      projectName: "arwijesuriya.me",
-      projectDescription: "My personal website built with Next.js (app router), TailwindCSS, @shadcn/ui and hosted on Vercel.",
-      live: "https://arwijesuriya.me/",
-      github: "",
-    },
-    {
-      projectName: "THE ATLAS",
-      projectDescription: "This is a beginner friendly JavaScript project Using HTML5 and CSS3.",
-      live: "https://theatlas.netlify.app/",
-      github: "https://github.com/arwijesuriya/the-atlas.git",
-    },
-    {
-      projectName: "THE BOOKSTORE",
-      projectDescription: "This is a fullstack online bookstore project made with MERN stack and TailwindCSS. (In progress)",
-      live: "",
-      github: "",
-    },
-  ],
-};
-
 const Resume = () => {
 
   return (
@@ -278,7 +245,6 @@ const Resume = () => {
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="techStack">Tech stack</TabsTrigger>
             <TabsTrigger value="abilities">Abilities</TabsTrigger>
-            <TabsTrigger value="projects">Projects</TabsTrigger>
           </TabsList>
 
           {/* CONTENT */}
@@ -422,74 +388,6 @@ const Resume = () => {
                         <li key={index} className="bg-[#232329] h-[180px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
                           <span className="text-xl text-accent">{item.abName}</span>
                           <h3 className="text-sm max-w-full min-h-[100px] text-white/40 text-center lg:text-left">{item.abDescription}</h3>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </ScrollArea>
-              </div>
-            </TabsContent>
-
-            {/* PROJECTS */}
-            <TabsContent value="projects" className="w-full" >
-              <div className="flex flex-col gap-[20px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">
-                  {projects.title}
-                </h3>
-                <p className="max-w-full text-white/60 mx-auto xl:mx-0">
-                  {projects.description}
-                </p>
-                <ScrollArea className="h-[200px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
-                    {projects.myProjects.map((item, index) => {
-                      return (
-                        <li key={index} className="bg-[#232329] h-[180px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
-                          <span className="text-xl text-accent">{item.projectName}</span>
-                          <h3 className="text-sm max-w-full min-h-[80px] text-white/40 text-center lg:text-left">{item.projectDescription}</h3>
-                          
-                          {/* ICONS */}
-                          {/*<div className="flex items-center gap-2">
-                            <ProjectSocial projectStyles="flex gap-1" proIconStyles="bg-primary w-8 h-8 rounded-xl flex justify-center items-center text-base hover:text-accent hover:transition-all duration-300" />
-                      </div>*/}
-
-                          <ul className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 xl:gap-[10px] gap-4">
-                            {projects.myProjects.map((proj, index) => {
-                              return (
-                                <li key={index}>
-                                  
-                                  {/* LIVE */}
-                                  <Link href={proj.live}>
-                                    <TooltipProvider delayDuration={100}>
-                                      <Tooltip>
-                                        <TooltipTrigger className="w-[10px] h-[10px] rounded-full bg-white/5 flex justify-center items-center group">
-                                          <FaGlobe className="text-white text-3xl group-hover:text-accent" />
-                                        </TooltipTrigger>
-
-                                        <TooltipContent>
-                                          <p>Live project</p>
-                                        </TooltipContent>
-                                      </Tooltip>
-                                    </TooltipProvider>
-                                  </Link>
-
-                                  {/* GITHUB */}
-                                  <Link href={proj.github}>
-                                    <TooltipProvider delayDuration={100}>
-                                      <Tooltip>
-                                        <TooltipTrigger className="w-[10px] h-[10px] rounded-full bg-white/5 flex justify-center items-center group">
-                                          <FaGithub className="text-white text-3xl group-hover:text-accent" />
-                                        </TooltipTrigger>
-
-                                        <TooltipContent>
-                                          <p>GitHub Repository</p>
-                                        </TooltipContent>
-                                      </Tooltip>
-                                    </TooltipProvider>
-                                  </Link>
-                                </li>
-                              );
-                            })}
-                          </ul>
                         </li>
                       );
                     })}

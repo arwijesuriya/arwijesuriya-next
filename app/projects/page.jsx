@@ -5,7 +5,7 @@ import { FaLink } from 'react-icons/fa';
 
 // IMPORT COMPONENTS
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+//import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {  motion } from 'framer-motion';
 import Link from 'next/link';
@@ -46,7 +46,7 @@ const uix = {
     {
       uixName: "THE BOOKSTORE",
       uixDescription: "This is a fullstack online bookstore project made with MERN stack and TailwindCSS. In this case I made the Figma design of project.",
-      uixLink: "https://thecoffeeshop-arw.netlify.app/",
+      uixLink: "",
     },
   ],
 };
